@@ -1,31 +1,20 @@
-const myImage = document.querySelector("img");
-
-myImage.onclick = () => {
-  const mySrc = myImage.getAttribute("src");
-  if (mySrc === "images/firefox.png") {
-    myImage.setAttribute("src", "images/chrome.png");
+function changeLanguage() {
+  var greeting = document.getElementById('greeting');
+  if (greeting.textContent === 'Hi,') {
+      greeting.textContent = 'Tere,';
   } else {
-    myImage.setAttribute("src", "images/firefox.png");
+      greeting.textContent = 'Hi,'; 
   }
-};
+}
 
-let myButton = document.querySelector("button");
-let myHeading = document.querySelector("h1");
+const myImage = document.getElementById("image");
+    const changeButton = document.getElementById("changePic");
 
-function setUserName() {
-    const myName = prompt("Please enter your name.");
-    localStorage.setItem("name", myName);
-    myHeading.textContent = `Mozilla is cool, ${myName}`;
-  }
-
-  if (!localStorage.getItem("name")) {
-    setUserName();
-  } else {
-    const storedName = localStorage.getItem("name");
-    myHeading.textContent = `Mozilla is cool, ${storedName}`;
-  }
-  
-  myButton.onclick = () => {
-    setUserName();
-  };
-  
+    changeButton.addEventListener("click", function() {
+      const mySrc = myImage.getAttribute("src");
+      if (mySrc === "images/wadirum.jpeg") {
+        myImage.setAttribute("src", "images/skiselfie.jpeg");
+      } else {
+        myImage.setAttribute("src", "images/wadirum.jpeg");
+      }
+    });
